@@ -20,8 +20,12 @@
 # else:
 #     print("Yes")
 
-x = [ "abc", "nmsds", "a","c","wsad" ]
-for i in range(len(x) -1):
-    if x[i] == 'a':
-        x.remove(x[i])
-    print(x[i])
+# x = [ "abc", "nmsds", "a","c","wsad" ]
+# for i in range(len(x) -1):
+#     if x[i] == 'a':
+#         x.remove(x[i])
+#     print(x[i])
+# x = "ada dssddf fdsf "
+# temp = list(x)
+# for i in temp:
+#     print(type(i))
