@@ -3,21 +3,34 @@ def generateDocument(characters, document):
 
     if document == "":
         return True
-    temp = list(document.replace(" ",""))
+    # document = document.replace(" ","")
+    # characters = characters.replace(" ","")
+    tempdoc = {}
+    tempchar = {}
+    for i in document:
+        if i not in tempdoc:
+            tempdoc[i] = 1
+        else:
+            tempdoc[i] += 1
+    # print(tempdoc)
     for i in characters:
-        for j in list(temp):
-            if i==" " or j==" ":
+        if i not in tempchar:
+            tempchar[i] = 1
+        else:
+            tempchar[i] += 1
+    # print(tempchar)
+    for i in tempdoc:
+        if i in tempchar:
+            if tempdoc[i] <= tempchar[i]:
                 pass
-            elif i == j:
-                temp.remove(j)
+            else:
+                return False
+        else:
+            return False
+    return True
 
 
-    if len(temp) == 0:
-        return True
-    else:
-        return False
-    
+x = "helloworldO"
+y="hello wOrld"
+print("Output is=",generateDocument(x,y))   
 
-x = "Bste!hetsi ogEAxpelrt x "
-y="AlgoExpert is the Best!"
-print("Output is=",generateDocument(x,y))
